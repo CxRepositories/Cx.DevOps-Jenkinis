@@ -11,9 +11,9 @@ pipeline {
         echo 'This is my test'
       }
     }
-    stage('error') {
+    stage('Docker builder') {
       steps {
-        dockerNode(dockerHost: 'tcp://10.31.2.182:2375', image: 'microsoft/dotnet') {
+        dockerNode(dockerHost: 'tcp://10.31.2.182:2375', image: 'tomcat:latest') {
           echo '${env}'
         }
 

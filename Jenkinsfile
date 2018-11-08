@@ -13,7 +13,7 @@ pipeline {
     }
     stage('error') {
       steps {
-        dockerNode(dockerHost: 'tcp://10.31.2.182', image: 'microsoft/dotnet') {
+        dockerNode(dockerHost: 'tcp://10.31.2.182:2375', image: 'microsoft/dotnet') {
           echo '${env}'
         }
 

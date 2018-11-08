@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        git(url: 'http://tfs2018app:8080/tfs/DefaultCollection/Enterprise/_git/Cx.RemediationIntelligence', branch: 'development')
+        git(url: 'http://tfs2018app:8080/tfs/DefaultCollection/Enterprise/_git/Cx.RemediationIntelligence', branch: 'development', credentialsId: 'tfs')
       }
     }
     stage('Build RemediationIntelligence') {

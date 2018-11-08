@@ -1,10 +1,5 @@
 pipeline {
-  agent {
-    docker {
-      image 'microsoft/dotnet'
-    }
-
-  }
+  agent none
   stages {
     stage('Checkout') {
       steps {
@@ -24,7 +19,7 @@ pipeline {
         echo 'This is my test'
       }
     }
-    stage('') {
+    stage('error') {
       steps {
         dockerNode(dockerHost: '10.31.2.182', image: 'microsoft/dotnet') {
           echo '${env}'

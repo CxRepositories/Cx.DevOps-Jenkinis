@@ -14,9 +14,11 @@ pipeline {
     stage('Docker builder') {
       steps {
         dockerNode(dockerHost: 'tcp://10.31.2.182:2375', image: 'tomcat:latest') {
-          echo '${env}'
+          sh '''env
+ls -al'''
         }
 
+        sh 'ls -al'
       }
     }
   }

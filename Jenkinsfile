@@ -24,5 +24,13 @@ pipeline {
         echo 'This is my test'
       }
     }
+    stage('') {
+      steps {
+        dockerNode(dockerHost: '10.31.2.182', image: 'microsoft/dotnet') {
+          echo '${env}'
+        }
+
+      }
+    }
   }
 }
